@@ -65,4 +65,6 @@ public class TrajetManagerService {
 	/*Delete text pour Gitpush*/
 	
 	/* Ajout pour tester un pull/push*/
+	
+	/* Nouvel ajout 11h46*/
 }
