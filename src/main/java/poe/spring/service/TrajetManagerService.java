@@ -23,13 +23,13 @@ public class TrajetManagerService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public Trajet creation(Long userId, String villeDepart, 
+	public Trajet creation(String userLogin, String villeDepart, 
 			String villeArrivee, Date dateDepart, int prixTrajet,
 			int nbPlaces) throws Exception {
 		Trajet trajet;
 
 
-		User conducteur = userRepository.findOne(userId);
+		User conducteur = userRepository.findByLogin(userLogin);
 
 		if (conducteur != null) {
 			trajet = new Trajet();

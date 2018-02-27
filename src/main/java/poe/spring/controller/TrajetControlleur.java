@@ -31,7 +31,7 @@ public class TrajetControlleur {
 	public String proposerTrajet(@Valid TrajetForm trajetForm, BindingResult bindRes, RedirectAttributes attr) throws Exception {
 
 		Trajet nouveauTrajet = trajetManagerService.creation(
-				trajetForm.getUserId(), trajetForm.getVilleDepart(), 
+				trajetForm.getUserLogin(), trajetForm.getVilleDepart(), 
 				trajetForm.getVilleArrivee(), trajetForm.getDateDepart(), 
 				trajetForm.getPrixTrajet(), trajetForm.getNbPlaces());
 		
