@@ -51,6 +51,36 @@ public class TrajetManagerService {
 		return trajet;
 	}
 
+	
+	public Trajet creationRest(long userId, String villeDepart, 
+			String villeArrivee, Date dateDepart, int prixTrajet,
+			int nbPlaces) throws Exception {
+		Trajet trajet;
+
+
+		User conducteur = userRepository.findOne(userId);
+		
+		if (conducteur != null) {
+			trajet = new Trajet();
+			trajet.setVilleDepart(villeDepart);
+			trajet.setVilleArrivee(villeArrivee);
+			trajet.setDateDepart(dateDepart);
+			trajet.setPrixTrajet(prixTrajet);
+			trajet.setNbPlaces(nbPlaces);
+
+			trajet.setConducteur(conducteur);
+			conducteur.getTrajets().add(trajet);
+
+			trajet = trajetRepository.save(trajet);
+			userRepository.save(conducteur); // Added
+			
+		} else {
+			throw new Exception("conducteur introuvable");
+		}
+		return trajet;
+	}
+	
+	
 	public List<Trajet> lister() {
 		List<Trajet> trajets = (List<Trajet>) trajetRepository.findAll();
 		return trajets;

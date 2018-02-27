@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import poe.spring.domain.User;
 
 public class TrajetForm {
 	private String villeDepart;

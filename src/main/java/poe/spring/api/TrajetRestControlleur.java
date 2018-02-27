@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import poe.spring.api.dto.ProposerUnTrajetDTO;
 import poe.spring.domain.Trajet;
-import poe.spring.domain.User;
 import poe.spring.repository.TrajetRepository;
 import poe.spring.service.TrajetManagerService;
 
@@ -33,7 +32,7 @@ public class TrajetRestControlleur {
 	// conducteur en attribut
 	@PostMapping
 	public Trajet save(@RequestBody ProposerUnTrajetDTO nouveauTrajetDTO) throws Exception {
-		Trajet nouveauTrajet = trajetManagerService.creation(nouveauTrajetDTO.getConducteurId(),
+		Trajet nouveauTrajet = trajetManagerService.creationRest(nouveauTrajetDTO.getConducteurId(),
 				nouveauTrajetDTO.getVilleDepart(), nouveauTrajetDTO.getVilleArrivee(), nouveauTrajetDTO.getDateDepart(),
 				nouveauTrajetDTO.getPrixTrajet(), nouveauTrajetDTO.getNbPlaces());
 		return nouveauTrajet;
