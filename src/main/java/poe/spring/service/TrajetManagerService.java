@@ -26,13 +26,13 @@ public class TrajetManagerService {
 	public Trajet creation(Long userId, String villeDepart, 
 			String villeArrivee, Date dateDepart, int prixTrajet,
 			int nbPlaces) throws Exception {
+		Trajet trajet;
 
-		Trajet trajet = new Trajet();
 
 		User conducteur = userRepository.findOne(userId);
-		//User conducteur = userManagerService.visualiserUser(userId);
 
 		if (conducteur != null) {
+			trajet = new Trajet();
 			trajet.setVilleDepart(villeDepart);
 			trajet.setVilleArrivee(villeArrivee);
 			trajet.setDateDepart(dateDepart);
@@ -43,6 +43,8 @@ public class TrajetManagerService {
 			conducteur.getTrajets().add(trajet);
 
 			trajet = trajetRepository.save(trajet);
+			userRepository.save(conducteur); // Added
+			
 		} else {
 			throw new Exception("conducteur introuvable");
 		}
@@ -59,4 +61,6 @@ public class TrajetManagerService {
 		return trajet;
 	}
 
+	
+	/*Ajout d'un text pour Gitpush*/
 }
