@@ -62,5 +62,7 @@ public class TrajetManagerService {
 	}
 
 	
-	/*Ajout d'un text pour Gitpush*/
+	/*Delete text pour Gitpush*/
+	
+	/* Ajout pour tester un pull/push*/
 }
