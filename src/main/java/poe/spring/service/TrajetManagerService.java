@@ -61,10 +61,6 @@ public class TrajetManagerService {
 		return trajet;
 	}
 
+	/* Modifier le texte*/
 	
-	/*Delete text pour Gitpush*/
-	
-	/* Ajout pour tester un pull/push*/
-	
-	/* Nouvel ajout 11h46*/
 }
