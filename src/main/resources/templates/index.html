@@ -16,6 +16,16 @@
 		<div>
 			<a th:href="@{/index/formulaire}"> Formulaire d'inscription </a>
 		</div>
+		
+		<form th:action="@{/login}" method="post">
+			<input type="submit" value="Login" />
+		</form>
+		
+		<!-- <a th:href="@{/login}">login</a> -->
+		
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Sign Out" />
+		</form>
 	</h2>
 
 </body>
