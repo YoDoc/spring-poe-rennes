@@ -1,9 +1,19 @@
 <!DOCTYPE html>
+
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
+
+<head>
+
+<link rel="stylesheet" href="/stylesheet.css"></link>
+</head>
+
+
+
 <body>
-	<h1>Proposer un nouveau Trajet</h1>
+	<div class="textTitre"><h1>Proposer un nouveau Trajet</h1>
 
 	<form th:action="@{/index/nouveauTrajet}" method="post">
 		<div>
@@ -30,6 +40,7 @@
 
 		<input type="submit" value="proposerTrajet" />
 	</form>
+	</div>
 
 </body>
 </html>
