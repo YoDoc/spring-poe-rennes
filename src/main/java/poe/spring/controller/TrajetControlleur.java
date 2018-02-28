@@ -21,47 +21,30 @@ public class TrajetControlleur {
 
 	@Autowired
 	TrajetManagerService trajetManagerService;
-	
+
 	@GetMapping("/nouveauTrajet")
 	public String formulaire(Model model) {
 		return "nouveauTrajet";
 	}
-	
-	@PostMapping("/nouveauTrajet") 
-	public String proposerTrajet(@Valid TrajetForm trajetForm, BindingResult bindRes, RedirectAttributes attr) throws Exception {
 
-		Trajet nouveauTrajet = trajetManagerService.creation(
-				trajetForm.getUserLogin(), trajetForm.getVilleDepart(), 
-				trajetForm.getVilleArrivee(), trajetForm.getDateDepart(), 
-				trajetForm.getPrixTrajet(), trajetForm.getNbPlaces());
-		
-		System.out.println("Trajet enregistré: \n id: "+nouveauTrajet.getId()+"\n Ville départ: " + nouveauTrajet.getVilleDepart() +
-				"\n ville arrivée: "+ nouveauTrajet.getVilleArrivee() + "\n nb places: "+ nouveauTrajet.getNbPlaces()+ 
-				"\n prix: "+ nouveauTrajet.getPrixTrajet() + "\n");
-		return "trajetValide" ;
+	@PostMapping("/nouveauTrajet")
+	public String proposerTrajet(@Valid TrajetForm trajetForm, BindingResult bindRes, RedirectAttributes attr)
+			throws Exception {
 
-	}
-	
-	
-	
-	@GetMapping("/trajetValide")
-	public String validation() {
+		Trajet nouveauTrajet = trajetManagerService.creation(trajetForm.getUserLogin(), trajetForm.getVilleDepart(),
+				trajetForm.getVilleArrivee(), trajetForm.getDateDepart(), trajetForm.getPrixTrajet(),
+				trajetForm.getNbPlaces());
+
+		System.out.println("Trajet enregistré: \n id: " + nouveauTrajet.getId() + "\n Ville départ: "
+				+ nouveauTrajet.getVilleDepart() + "\n ville arrivée: " + nouveauTrajet.getVilleArrivee()
+				+ "\n nb places: " + nouveauTrajet.getNbPlaces() + "\n prix: " + nouveauTrajet.getPrixTrajet() + "\n");
 		return "trajetValide";
 
 	}
+
+	@GetMapping("/trajetValide")
+	public String validation() {
+		return "trajetValide";
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
