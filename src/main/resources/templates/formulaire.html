@@ -2,12 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
+<head>
+
+<link rel="stylesheet" href="/stylesheet.css"></link>
+</head>
 <body>
 	<h1>Bienvenue sur le Formulaire d'inscription au forum</h1>
 
 	<form th:action="@{/index/formulaire}" method="post">
-		<div> login: <input type="text" name="login" /> </div>
-		<div> password: <input type="text" name="pwd" /> </div>
+		<div>
+			login: <input type="text" name="login" />
+		</div>
+		<div>
+			password: <input type="text" name="pwd" />
+		</div>
 		<input type="submit" value="save" />
 	</form>
 

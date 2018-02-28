@@ -1,6 +1,17 @@
-.textTitre {
+.formTrajet {
 	text-align: center;
-	background-color: gray;
-	color: #fff;
-  }
+	background-color: aqua;
+	color: black;
+	width: 50%;
+	width: 50%;
+	margin: 10% 25%;
+}
 
+.center {
+	text-align: center;
+}
+
+.bold {
+	font-size: 25px;
+	font-weight: bolder;
+}

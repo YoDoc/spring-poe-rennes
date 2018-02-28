@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<link rel="stylesheet" href="/stylesheet.css"></link>
+</head>
 <body>
-<h1> Bonjour <span th:text="${name}"/>, 
-vous êtes bien enregistré </h1>
+	<h1>
+		Bonjour <span th:text="${name}" />, vous êtes bien enregistré
+	</h1>
 
-<h2> <div> Vous pouvez désormais proposer un Trajet: </div> </h2>
+	<h2>
+		<div>Vous pouvez désormais proposer un Trajet:</div>
+	</h2>
 
-  <div>
-	<a th:href="@{/index/nouveauTrajet}"> Je propose un trajet </a>
+	<div class="center bold">
+		<a th:href="@{/index/nouveauTrajet}"> Je propose un trajet </a>
 	</div>
 </body>
 </html>

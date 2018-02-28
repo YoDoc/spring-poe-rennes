@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link rel="stylesheet" href="/stylesheet.css"></link>
+</head>
 
 <body>
 	<h1>Page Hello simple</h1>
 
 	<form th:action="@{/index/inscription}" method="post">
-		<div> login: <input type="text" name="login" /> </div>
+		<div>
+			login: <input type="text" name="login" />
+		</div>
 		<input type="submit" value="save" />
 	</form>
 
